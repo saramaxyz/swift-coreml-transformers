@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,7 +38,6 @@
 		79908C19234EAB5400D0FE5B /* distilbert-squad-384_FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 79908C18234EAB5300D0FE5B /* distilbert-squad-384_FP16.mlmodel */; };
 		79908C1A234EAB5400D0FE5B /* distilbert-squad-384_FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 79908C18234EAB5300D0FE5B /* distilbert-squad-384_FP16.mlmodel */; };
 		799F42E2234CDF70006CDB03 /* distilgpt2-64-6.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 799F42E1234CDF70006CDB03 /* distilgpt2-64-6.mlmodel */; };
-		79D94AD6234CE4830033EA7D /* gpt2-64-12.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 79D94AD5234CE4830033EA7D /* gpt2-64-12.mlmodel */; };
 		79F2CC5C22C50078009F8551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CC5B22C50078009F8551 /* AppDelegate.swift */; };
 		79F2CC5E22C50078009F8551 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CC5D22C50078009F8551 /* SceneDelegate.swift */; };
 		79F2CC6022C50078009F8551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CC5F22C50078009F8551 /* ViewController.swift */; };
@@ -68,6 +67,7 @@
 		79F2CCA022C666C7009F8551 /* question_tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = 79F2CC9F22C666C7009F8551 /* question_tokens.json */; };
 		79F2CCA222C6717E009F8551 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CCA122C6717D009F8551 /* LoaderView.swift */; };
 		79F7060E22EA0CA900C4432C /* BERTSQUADFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 79F2CC9022C5590C009F8551 /* BERTSQUADFP16.mlmodel */; };
+		7EDD5E842AD58183000292B8 /* AeroEdge in Frameworks */ = {isa = PBXBuildFile; productRef = 7EDD5E832AD58183000292B8 /* AeroEdge */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +111,6 @@
 		79908C16234E99B100D0FE5B /* DistilbertForQATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistilbertForQATests.swift; sourceTree = "<group>"; };
 		79908C18234EAB5300D0FE5B /* distilbert-squad-384_FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "distilbert-squad-384_FP16.mlmodel"; sourceTree = "<group>"; };
 		799F42E1234CDF70006CDB03 /* distilgpt2-64-6.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "distilgpt2-64-6.mlmodel"; sourceTree = "<group>"; };
-		79D94AD5234CE4830033EA7D /* gpt2-64-12.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "gpt2-64-12.mlmodel"; sourceTree = "<group>"; };
 		79F2CC5822C50078009F8551 /* CoreMLBert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLBert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F2CC5B22C50078009F8551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F2CC5D22C50078009F8551 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +135,7 @@
 		79F2CC9D22C57825009F8551 /* BertForQATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BertForQATests.swift; sourceTree = "<group>"; };
 		79F2CC9F22C666C7009F8551 /* question_tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = question_tokens.json; sourceTree = "<group>"; };
 		79F2CCA122C6717D009F8551 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		7EDD5E852AD5BED1000292B8 /* AeroEdge */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AeroEdge; path = "../swift-packages/AeroEdge"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDD5E842AD58183000292B8 /* AeroEdge in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +174,6 @@
 		7944CDBD22C501AF000C0B1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				79D94AD5234CE4830033EA7D /* gpt2-64-12.mlmodel */,
 				799F42E1234CDF70006CDB03 /* distilgpt2-64-6.mlmodel */,
 				7944CDBE22C501D6000C0B1E /* dev-v1.1.json */,
 				79F2CC8422C50F87009F8551 /* vocab.txt */,
@@ -217,6 +217,7 @@
 		79F2CC4F22C50078009F8551 = {
 			isa = PBXGroup;
 			children = (
+				7EDD5E852AD5BED1000292B8 /* AeroEdge */,
 				7944CDBD22C501AF000C0B1E /* Resources */,
 				79F2CC7F22C50410009F8551 /* Sources */,
 				79F2CC5A22C50078009F8551 /* CoreMLBert */,
@@ -296,6 +297,9 @@
 			dependencies = (
 			);
 			name = CoreMLGPT2;
+			packageProductDependencies = (
+				7EDD5E832AD58183000292B8 /* AeroEdge */,
+			);
 			productName = CoreMLGPT2;
 			productReference = 796DF54D22E1026700140C02 /* CoreMLGPT2.app */;
 			productType = "com.apple.product-type.application";
@@ -388,6 +392,9 @@
 				Base,
 			);
 			mainGroup = 79F2CC4F22C50078009F8551;
+			packageReferences = (
+				7EDD5E822AD58183000292B8 /* XCRemoteSwiftPackageReference "AeroEdge" */,
+			);
 			productRefGroup = 79F2CC5922C50078009F8551 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,7 +468,6 @@
 				796DF56F22E1039C00140C02 /* SquadDataset.swift in Sources */,
 				796DF55022E1026700140C02 /* AppDelegate.swift in Sources */,
 				796DF57222E1039C00140C02 /* Utils.swift in Sources */,
-				79D94AD6234CE4830033EA7D /* gpt2-64-12.mlmodel in Sources */,
 				796DF57422E1039C00140C02 /* MLMultiArray+Utils.swift in Sources */,
 				796DF57022E1039C00140C02 /* BertTokenizer.swift in Sources */,
 				796DF57522E1039C00140C02 /* GPT2Tokenizer.swift in Sources */,
@@ -577,13 +583,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 62F2ZV8GBX;
 				INFOPLIST_FILE = CoreMLGPT2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLGPT2;
+				PRODUCT_BUNDLE_IDENTIFIER = sarama.CoreMLGPT2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -595,13 +602,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 62F2ZV8GBX;
 				INFOPLIST_FILE = CoreMLGPT2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLGPT2;
+				PRODUCT_BUNDLE_IDENTIFIER = sarama.CoreMLGPT2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -769,13 +777,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 62F2ZV8GBX;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLBert;
+				PRODUCT_BUNDLE_IDENTIFIER = sarama.CoreMLBert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -787,13 +795,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 62F2ZV8GBX;
 				INFOPLIST_FILE = CoreMLBert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.katia.Katia.CoreMLBert;
+				PRODUCT_BUNDLE_IDENTIFIER = sarama.CoreMLBert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -891,6 +899,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7EDD5E822AD58183000292B8 /* XCRemoteSwiftPackageReference "AeroEdge" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/saramaxyz/AeroEdge.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EDD5E832AD58183000292B8 /* AeroEdge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EDD5E822AD58183000292B8 /* XCRemoteSwiftPackageReference "AeroEdge" */;
+			productName = AeroEdge;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79F2CC5022C50078009F8551 /* Project object */;
 }

@@ -8,14 +8,28 @@
 
 import UIKit
 
+extension UIViewController {
+    var appDelegate: AppDelegate {
+    return UIApplication.shared.delegate as! AppDelegate
+   }
+}
+
+
 class ViewController: UIViewController {
     @IBOutlet weak var shuffleBtn: UIButton!
     @IBOutlet weak var triggerBtn: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var speedLabel: UILabel!
     
-    let model = GPT2(strategy: .topK(40))
+    var model: GPT2?
+//    init() {
+//        super.init()
+//        self.model = GPT2(aeroEdge: appDelegate.aeroEdge, strategy: .topK(40))
+//    }
     
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     let prompts = [
         "Before boarding your rocket to Mars, remember to pack these items",
         "In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.",
@@ -26,7 +40,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.model = GPT2(aeroEdge: appDelegate.aeroEdge, strategy: .topK(40))
         shuffle()
         shuffleBtn.addTarget(self, action: #selector(shuffle), for: .touchUpInside)
         triggerBtn.addTarget(self, action: #selector(trigger), for: .touchUpInside)
@@ -47,7 +61,7 @@ class ViewController: UIViewController {
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
-            _ = self.model.generate(text: text, nTokens: 50) { completion, time in
+            _ = self.model!.generate(text: text, nTokens: 50) { completion, time in
                 DispatchQueue.main.async {
                     let startingTxt = NSMutableAttributedString(string: text, attributes: [
                         .font: self.textView.font as Any,

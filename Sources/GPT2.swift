@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreML
-
+import AeroEdge
 
 class GPT2 {
     
@@ -21,13 +21,30 @@ class GPT2 {
         case topP(Double)
     }
     
-    private let model = distilgpt2_64_6()
+//    private let model = gpt2_64_12()
     public let tokenizer = GPT2Tokenizer()
     public let seqLen = 64
     private let strategy: DecodingStrategy
-    
-    init(strategy: DecodingStrategy = .greedy) {
+    private var model: MLModel?
+
+    init(aeroEdge: AeroEdge, strategy: DecodingStrategy = .greedy ) {
         self.strategy = strategy
+        Task {
+            print("Downloading AeroEdge model...")
+            await aeroEdge.getModel(modelName: "gpt2-64-12", bundledModelURL: nil, progress: { progress in
+                print("Download Progress: \(progress)")
+            }, completion: { [weak self] result, isFinal in
+                switch result {
+                case .success(let model):
+                    print(model.description)
+                    self?.model = model
+                case .failure(let error):
+                    // Handle the error
+                    print(error.localizedDescription)
+                }
+            }
+            )
+        }
     }
     
     /// Main prediction loop:
@@ -48,10 +65,10 @@ class GPT2 {
             Array(0..<seqLen)
         )
         
-        let output = try! model.prediction(input_ids: input_ids, position_ids: position_ids)
+        let output = try! model!.prediction(from: MLDictionaryFeatureProvider(dictionary: ["input_ids": input_ids, "position_ids": position_ids]))
         
         let outputLogits = MLMultiArray.slice(
-            output.output_logits,
+            output.featureValue(for: "output_logits")!.multiArrayValue!,
             indexing: [.select(0), .select(maxTokens.count - 1), .slice, .select(0), .select(0)]
         )
         
